@@ -96,9 +96,17 @@ export function WaitlistForm({
           value={value}
           placeholder={placeholder}
           className={cn(
-            "flex-1 text-sm pl-4 pr-28 py-2 h-11 bg-gray-11/5 cursor-text rounded-full text-gray-12 placeholder:text-gray-9 border border-gray-11/10",
-            "focus:outline-none focus:ring-2 focus:ring-gray-12/20"
+            "flex-1 text-sm pl-4 pr-32 py-2 h-11 cursor-text rounded-full",
+            "focus:outline-none focus:ring-2",
           )}
+          style={{
+            background: "rgba(255,255,255,0.05)",
+            border: "1px solid rgba(180, 0, 0, 0.3)",
+            color: "#f0d0d0",
+            outline: "none",
+          }}
+          onFocus={e => (e.currentTarget.style.boxShadow = "0 0 0 2px rgba(139,0,0,0.4)")}
+          onBlur={e => (e.currentTarget.style.boxShadow = "none")}
           disabled={inputDisabled}
           onChange={(e) => setValue(e.target.value)}
           autoComplete="off"
@@ -108,11 +116,18 @@ export function WaitlistForm({
           type="submit"
           disabled={inputDisabled}
           className={cn(
-            "absolute h-8 px-3.5 bg-gray-12 text-gray-1 text-sm top-1/2 transform -translate-y-1/2 right-1.5 rounded-full font-medium flex gap-1 items-center",
-            "disabled:cursor-not-allowed transition-colors",
-            state === "loading" && "bg-gray-12 text-gray-2",
+            "absolute h-8 px-4 text-sm top-1/2 transform -translate-y-1/2 right-1.5 rounded-full font-bold flex gap-1 items-center tracking-wide",
+            "disabled:cursor-not-allowed transition-all uppercase",
             inputDisabled && "cursor-not-allowed"
           )}
+          style={{
+            background: state === "success" ? "#2d7a2d" : "linear-gradient(135deg, #8b0000, #c0392b)",
+            color: "#fff",
+            fontFamily: "'Unbounded', sans-serif",
+            fontSize: "11px",
+            letterSpacing: "0.08em",
+            boxShadow: "0 0 20px rgba(139,0,0,0.4)",
+          }}
         >
           {state === "loading" ? (
             <>

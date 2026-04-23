@@ -27,9 +27,14 @@ export function WaitlistWrapper({
   return (
     <div
       className={cn(
-        "w-full mx-auto max-w-[500px] flex flex-col justify-center items-center bg-gray-1/85 pb-0 overflow-hidden rounded-2xl",
-        "shadow-[0px_170px_48px_0px_rgba(18,_18,_19,_0.00),_0px_109px_44px_0px_rgba(18,_18,_19,_0.01),_0px_61px_37px_0px_rgba(18,_18,_19,_0.05),_0px_27px_27px_0px_rgba(18,_18,_19,_0.09),_0px_7px_15px_0px_rgba(18,_18,_19,_0.10)]"
+        "w-full mx-auto max-w-[500px] flex flex-col justify-center items-center pb-0 overflow-hidden rounded-2xl",
       )}
+      style={{
+        background: "rgba(10, 5, 5, 0.88)",
+        border: "1px solid rgba(120, 0, 0, 0.35)",
+        boxShadow: "0 0 60px rgba(100, 0, 0, 0.3), 0 25px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(180,0,0,0.1)",
+        backdropFilter: "blur(16px)",
+      }}
     >
       <div className="flex flex-col items-center gap-4 flex-1 text-center w-full p-8 pb-4">
         {logo && (
@@ -44,9 +49,11 @@ export function WaitlistWrapper({
         <div className="flex flex-col gap-10">{children}</div>
       </div>
       <footer className={cn(
-        "flex items-center w-full self-stretch px-8 py-3 text-sm bg-gray-12/[.07] overflow-hidden",
+        "flex items-center w-full self-stretch px-8 py-3 text-sm overflow-hidden",
         hideCopyright ? "justify-center" : "justify-between"
-      )}>
+      )}
+        style={{ borderTop: "1px solid rgba(120, 0, 0, 0.2)", background: "rgba(60, 0, 0, 0.15)" }}
+      >
         {!hideCopyright && (
           <p className="text-xs text-slate-10">
             {copyright}{" "}
