@@ -1,3 +1,7 @@
-# sky-dream-project-2
+# Минималистичный Waitlist
 
-Initial repository setup for pr-poehali-dev/sky-dream-project-2
+![Preview](preview.png)
+
+Элегантная страница листа ожидания с анимированным mesh-градиентом на фоне. Включает форму подписки на email, переключатель темы (светлая/темная/авто) и футер с копирайтом. Идеально подходит для анонса запуска продукта или сбора заявок на ранний доступ.
+
+`"tags": ["waitlist", "gradient", "dark", "light", "minimal"]`
